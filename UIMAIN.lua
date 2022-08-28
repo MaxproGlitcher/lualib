@@ -11,14 +11,14 @@ local rs = game:GetService("RunService")
 togglefalse = nil
 toggletrue = nil
 
-library.topbar = Color3.fromRGB(11, 11, 11)
+library.topbar = Color3.fromRGB(18, 18, 18)
 library.buttoncontainer = Color3.fromRGB(33, 33, 33)
 library.mainframe = Color3.fromRGB(22, 22, 22)
 library.searchbar = Color3.fromRGB(38, 38, 38)
 library.buttoncontainerhovered = Color3.fromRGB(44, 44, 44)
 library.toggletrue = toggletrue or Color3.fromRGB(80, 225, 120)
 library.togglefalse = togglefalse or Color3.fromRGB(200, 70, 70)
-library.scrollbar = Color3.fromRGB(77, 77, 77)
+library.scrollbar = Color3.fromRGB(166, 166, 166)
 library.dropdowncontainer = Color3.fromRGB(22, 22, 22)
 library.divider = Color3.fromRGB(33, 33, 33)
 library.descriptiontext = Color3.fromRGB(170, 170, 170)
@@ -53,7 +53,7 @@ function library.new(name, size)
 	shadow.Size = UDim2.new(1, 12, 1, 12)
 	shadow.ImageTransparency = 0.5
 	shadow.Image = "rbxassetid://1316045217"
-	shadow.ImageColor3 = Color3.fromRGB(22, 22, 22)
+	shadow.ImageColor3 = Color3.fromRGB(10, 250, 255)
 	shadow.ScaleType = Enum.ScaleType.Slice
 	shadow.SliceCenter = Rect.new(10, 10, 118, 118)
 	shadow.Parent = MainFrame
