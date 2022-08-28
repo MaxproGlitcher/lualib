@@ -100,28 +100,6 @@ function library.new(name, size)
 	
 	library:addRound(Topbar)
 
-	local CloseUI = Instance.new("ImageButton")
-	CloseUI.Parent = Topbar
-	CloseUI.AnchorPoint = Vector2.new(1, 0.5)
-	CloseUI.Position = UDim2.new(1, 0, 0.5, 0)
-	CloseUI.Image = "http://www.roblox.com/asset/?id=5840446794"
-	CloseUI.BackgroundTransparency = 1
-	CloseUI.Size = UDim2.new(0, 25, 0, 25)
-	CloseUI.ImageColor3 = Color3.fromRGB(255, 255, 255)
-	CloseUI.ZIndex = 2
-	CloseUI.MouseEnter:connect(function()
-		CloseUI.Size = UDim2.new(0, 27, 0, 27)
-		CloseUI.Position = UDim2.new(1, 1, 0.5, 0)
-	end)
-	CloseUI.MouseLeave:connect(function()
-		CloseUI.Size = UDim2.new(0, 25, 0, 25)
-		CloseUI.Position = UDim2.new(1, 0, 0.5, 0)
-	end)
-	CloseUI.MouseButton1Click:connect(function()
-		UILIB:Destroy()
-		UILIB = nil
-	end)
-
 	local TextLabel = Instance.new("TextLabel")
 	TextLabel.Parent = Topbar
 	TextLabel.BackgroundTransparency = 1
