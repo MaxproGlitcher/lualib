@@ -51,9 +51,9 @@ function library.new(name, size)
 	shadow.BackgroundTransparency = 1
 	shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
 	shadow.Size = UDim2.new(1, 12, 1, 12)
-	shadow.ImageTransparency = 0.5
+	shadow.ImageTransparency = 0.66
 	shadow.Image = "rbxassetid://1316045217"
-	shadow.ImageColor3 = Color3.fromRGB(10, 250, 255)
+	shadow.ImageColor3 = Color3.fromRGB(25, 25, 25)
 	shadow.ScaleType = Enum.ScaleType.Slice
 	shadow.SliceCenter = Rect.new(10, 10, 118, 118)
 	shadow.Parent = MainFrame
