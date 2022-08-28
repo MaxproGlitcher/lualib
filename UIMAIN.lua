@@ -138,7 +138,7 @@ function library.new(name, size)
 	Container.Position = UDim2.new(0, 0, 0, 45)
 	Container.Size = UDim2.new(1, 0, 1, -45)
 	Container.CanvasSize = UDim2.new(1, 0, 1, 0)
-	Container.ScrollBarThickness = 2
+	Container.ScrollBarThickness = 3
 	Container.ScrollingDirection = Enum.ScrollingDirection.Y
 	Container.ScrollBarImageColor3 = library.scrollbar
 	Container.BorderSizePixel = 0
