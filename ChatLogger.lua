@@ -24,11 +24,13 @@ local Close = Instance.new("TextButton")
 local Mini = Instance.new("TextButton")
 local Log = Instance.new("TextButton")
 local Clear = Instance.new("TextButton")
+local Save = Instance.new("TextButton")
 local title = Instance.new("TextLabel")
 
 local logging = true
 local minimized = false
 local prevOutputPos = 0
+local savedchats = {}
 local ChatEvent = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents
 
 -- GUI
@@ -64,7 +66,7 @@ Close.Position = UDim2.new(0.95, 0, 0, 0)
 Close.Size = UDim2.new(0, 20, 0, 24)
 Close.Font = Enum.Font.Jura
 Close.Text = "X"
-Close.TextColor3 = Color3.new(1, 1, 1)
+Close.TextColor3 = defaultInstanceColor
 Close.TextSize = 14
 
 Mini.Name = "Mini"
@@ -74,8 +76,18 @@ Mini.Position = UDim2.new(0.8985, 0, 0, 0)
 Mini.Size = UDim2.new(0, 20, 0, 24)
 Mini.Font = Enum.Font.Jura
 Mini.Text = "-"
-Mini.TextColor3 = Color3.new(1, 1, 1)
+Mini.TextColor3 = defaultInstanceColor
 Mini.TextSize = 14
+
+Save.Name = "Save"
+Save.Parent = Frame
+Save.BackgroundTransparency = 0.9
+Save.Position = UDim2.new(0.602-0.1, 0, 0, 0)
+Save.Size = UDim2.new(0, 58, 0, 24)
+Save.Font = Enum.Font.SourceSans
+Save.Text = "Save to .txt"
+Save.TextColor3 = defaultInstanceColor
+Save.TextSize = 14
 
 Log.Name = "Log"
 Log.Parent = Frame
@@ -85,7 +97,7 @@ Log.Position = UDim2.new(0.284-0.1, 0, 0, 0)
 Log.Size = UDim2.new(0, 58, 0, 24)
 Log.Font = Enum.Font.SourceSans
 Log.Text = "Enabled"
-Log.TextColor3 = Color3.new(1, 1, 1)
+Log.TextColor3 = defaultInstanceColor
 Log.TextSize = 14
 
 Clear.Name = "Clear"
@@ -95,7 +107,7 @@ Clear.Position = UDim2.new(0.437-0.1, 0, 0, 0)
 Clear.Size = UDim2.new(0, 63, 0, 24)
 Clear.Font = Enum.Font.SourceSans
 Clear.Text = "Clear Logs"
-Clear.TextColor3 = Color3.new(1, 1, 1)
+Clear.TextColor3 = defaultInstanceColor
 Clear.TextSize = 14
 
 title.Name = "title"
@@ -105,7 +117,7 @@ title.BackgroundTransparency = 1
 title.Size = UDim2.new(0, 115, 0, 24)
 title.Font = Enum.Font.SourceSans
 title.Text = "Chat Logs"
-title.TextColor3 = Color3.new(1, 1, 1)
+title.TextColor3 = defaultInstanceColor
 title.TextSize = 14
 title.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -144,6 +156,15 @@ Clear.MouseButton1Down:Connect(function()
     prevOutputPos = 0
 end)
 
+Save.MouseButton1Down:Connect(function()
+    local newfilename = randomString(24)
+    writefile(newfilename..".chatlog",table.concat(savedchats, '\n'))
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Saved!",
+        Text = "Successfully saved chatlogs to "..newfilename..".chatlog"
+    })
+end)
+
 -- Functions
 
 local function output(plr, msg)
@@ -151,8 +172,9 @@ local function output(plr, msg)
         return 
     end
 
+    local outputVar = string.format("%s: %s", plr, msg or "")
  	local outputInstance = Instance.new("TextLabel", LogPanel)
- 	outputInstance.Text = string.format("%s: %s", plr, msg or "")
+ 	outputInstance.Text = outputVar
  	outputInstance.Size = UDim2.new(2,0,0.006,0)
  	outputInstance.Position = UDim2.new(0,0,prevOutputPos,0)
  	outputInstance.Font = Enum.Font.SourceSansSemibold
@@ -164,11 +186,24 @@ local function output(plr, msg)
     outputInstance.TextXAlignment = Enum.TextXAlignment.Left
  	outputInstance.ClipsDescendants = true
 
+    table.insert(savedchats, outputVar)
 	prevOutputPos = prevOutputPos + 0.006
+end
+
+function randomString(length)
+    local Build = ''
+    local Alphabet = {'a', 'b', 'c','h','x','d','a','1','4','6','7','9','0','5','s','z','j','k','2','3'}
+    for letter = 1, length do
+           local Random = math.random(1, #Alphabet)
+           Build = Build..Alphabet[Random]
+    end
+    return Build
 end
 
 -- Events
 
 ChatEvent.OnMessageDoneFiltering.OnClientEvent:Connect(function(obj)
     output(obj.FromSpeaker, obj.Message)
- end)
+end)
+
+table.insert(savedchats, "Chatlogs for server "..game.GameId.."\n")
