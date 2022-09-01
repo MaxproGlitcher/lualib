@@ -86,7 +86,7 @@ local ThemeManager = {} do
 		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] end)
 
 		groupbox:AddDivider()
-		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
+		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Built-in Themes', Values = ThemesArray, Default = 1 })
 
 		groupbox:AddButton('Set as default', function()
 			self:SaveDefault(Options.ThemeManager_ThemeList.Value)
@@ -125,6 +125,8 @@ local ThemeManager = {} do
 				self.Library:Notify(string.format('Set default theme to %q', Options.ThemeManager_CustomThemeList.Value))
 			end
 		end)
+
+        groupbox:AddLabel('Themes are located at:\nworkspace/GlobalHackV2/themes', true)
 
 		ThemeManager:LoadDefault()
 
