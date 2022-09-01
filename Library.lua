@@ -1007,8 +1007,8 @@ do
 
         local TextLabel = Library:CreateLabel({
             Size = UDim2.new(1, -4, 0, 15);
-            Position = UDim2.new(0, 0, 0, -3);
             TextSize = 13;
+            TextColor3 = Library.AccentColor;
             Text = Text;
             TextWrapped = DoesWrap or false,
             RichText = true,
@@ -1021,6 +1021,7 @@ do
             local Y = select(2, Library:GetTextBounds(Text, Enum.Font.Code, 14, Vector2.new(TextLabel.AbsoluteSize.X, math.huge)))
             TextLabel.Size = UDim2.new(1, -4, 0, Y)
         else
+            
             Library:Create('UIListLayout', {
                 Padding = UDim.new(0, 4);
                 FillDirection = Enum.FillDirection.Horizontal;
