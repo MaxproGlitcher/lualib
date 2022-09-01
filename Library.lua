@@ -139,7 +139,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
     })
 
     local Label = Library:CreateLabel({
-        Position = UDim2.fromOffset(3, 1),
+        Position = UDim2.fromOffset(1, 1),
         Size = UDim2.fromOffset(X, Y);
         TextSize = 12;
         Text = InfoStr,
