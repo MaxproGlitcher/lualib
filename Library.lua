@@ -150,8 +150,8 @@ function Library:AddToolTip(InfoStr, HoverInstance)
     });
 
     Library:AddToRegistry(Tooltip, {
-        BackgroundColor3 = 'MainColor';
-        BorderColor3 = 'OutlineColor';
+        BackgroundColor3 = 'BackgroundColor';
+        BorderColor3 = 'AccentColor';
     });
 
     Library:AddToRegistry(Label, {
