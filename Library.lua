@@ -2252,7 +2252,7 @@ function Library:SetWatermarkVisibility(Bool)
 end;
 
 function Library:SetWatermark(Text)
-    local X, Y = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
+    local X, Y = Library:GetTextBounds(Text, Enum.Font.ArialBold, 14);
     Library.Watermark.Size = UDim2.new(0, X + 15, 0, Y + 6);
     Library:SetWatermarkVisibility(true)
 
@@ -2260,7 +2260,7 @@ function Library:SetWatermark(Text)
 end;
 
 function Library:Notify(Text, Time)
-    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
+    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.Garamond, 14);
 
     YSize = YSize + 7
 
