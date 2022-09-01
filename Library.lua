@@ -1550,7 +1550,7 @@ do
 
         local SliderOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(1, -4, 0, 13);
+            Size = UDim2.new(1, -4, 0, 9);
             ZIndex = 5;
             Parent = Container;
         });
