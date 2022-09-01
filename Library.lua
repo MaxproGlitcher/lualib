@@ -131,7 +131,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
         BackgroundColor3 = Library.MainColor,        
         BorderColor3 = Library.OutlineColor,
 
-        Size = UDim2.fromOffset(X + 5, Y + 4),
+        Size = UDim2.fromOffset(X + 2, Y + 1),
         ZIndex = 11;
         Parent = Library.ScreenGui,
 
@@ -163,12 +163,12 @@ function Library:AddToolTip(InfoStr, HoverInstance)
     HoverInstance.MouseEnter:Connect(function()
         IsHovering = true
         
-        Tooltip.Position = UDim2.fromOffset(Mouse.X + 15, Mouse.Y + 12)
+        Tooltip.Position = UDim2.fromOffset(Mouse.X + 18, Mouse.Y + 13)
         Tooltip.Visible = true
 
         while IsHovering do
             RunService.Heartbeat:Wait()
-            Tooltip.Position = UDim2.fromOffset(Mouse.X + 15, Mouse.Y + 12)
+            Tooltip.Position = UDim2.fromOffset(Mouse.X + 18, Mouse.Y + 13)
         end
     end)
 
