@@ -1089,7 +1089,7 @@ do
 
         local ButtonLabel = Library:CreateLabel({
             Size = UDim2.new(1, 0, 1, 0);
-            Font = Enum.Font.Code;
+            Font = Enum.Font.SourceSansSemibold;
             TextSize = 14;
             Text = Text;
             ZIndex = 6;
@@ -1287,7 +1287,7 @@ do
             Position = UDim2.fromOffset(0, 0),
             Size = UDim2.fromScale(5, 1),
             
-            Font = Enum.Font.Code;
+            Font = Enum.Font.SourceSansBold;
             PlaceholderColor3 = Color3.fromRGB(190, 190, 190);
             PlaceholderText = Info.Placeholder or '';
 
