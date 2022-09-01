@@ -6,7 +6,7 @@
 ## Libraries
 
 #### Lualib provides pre-made and post-edited Graphical User Interface libraries:
-- An edited version of Linorialib by wally, specifically for GlobalHackV2.
+- An edited version of Linorialib by wally, made specifically for GlobalHackV2.
 - Edited editions of Linorialib's addons, **ThemeManager** and **SaveManager**
 - Full source code for Varion's personalized GUI library
 
