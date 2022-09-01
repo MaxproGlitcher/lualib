@@ -128,10 +128,10 @@ end;
 function Library:AddToolTip(InfoStr, HoverInstance)
     local X, Y = Library:GetTextBounds(InfoStr, Enum.Font.Code, 14);
     local Tooltip = Library:Create('Frame', {
-        BackgroundColor3 = Library.MainColor,        
-        BorderColor3 = Library.OutlineColor,
+        BackgroundColor3 = Library.BackgroundColor,        
+        BorderColor3 = Library.AccentColor,
 
-        Size = UDim2.fromOffset(X + 2, Y + 2),
+        Size = UDim2.fromOffset(X + 2, Y + 3),
         ZIndex = 11;
         Parent = Library.ScreenGui,
 
