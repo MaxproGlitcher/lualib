@@ -1000,7 +1000,7 @@ do
         local TextLabel = Library:CreateLabel({
             Size = UDim2.new(1, -4, 0, 15);
             TextSize = 13;
-            Font = Enum.Font.Code
+            Font = Enum.Font.Code;
             Text = Text;
             TextWrapped = DoesWrap or false,
             RichText = true,
@@ -1089,7 +1089,7 @@ do
 
         local ButtonLabel = Library:CreateLabel({
             Size = UDim2.new(1, 0, 1, 0);
-            Font = Enum.Font.Code
+            Font = Enum.Font.Code;
             TextSize = 14;
             Text = Text;
             ZIndex = 6;
