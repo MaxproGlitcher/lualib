@@ -139,7 +139,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
     })
 
     local Label = Library:CreateLabel({
-        Position = UDim2.fromOffset(3, 4),
+        Position = UDim2.fromOffset(3, 1),
         Size = UDim2.fromOffset(X, Y);
         TextSize = 12;
         Text = InfoStr,
@@ -162,12 +162,12 @@ function Library:AddToolTip(InfoStr, HoverInstance)
     HoverInstance.MouseEnter:Connect(function()
         IsHovering = true
         
-        Tooltip.Position = UDim2.fromOffset(Mouse.X + 18, Mouse.Y + 13)
+        Tooltip.Position = UDim2.fromOffset(Mouse.X + 18, Mouse.Y + 10)
         Tooltip.Visible = true
 
         while IsHovering do
             RunService.Heartbeat:Wait()
-            Tooltip.Position = UDim2.fromOffset(Mouse.X + 18, Mouse.Y + 13)
+            Tooltip.Position = UDim2.fromOffset(Mouse.X + 18, Mouse.Y + 10)
         end
     end)
 
