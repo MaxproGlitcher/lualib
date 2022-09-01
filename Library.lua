@@ -1007,6 +1007,7 @@ do
         local TextLabel = Library:CreateLabel({
             Size = UDim2.new(1, -4, 0, 15);
             TextSize = 13;
+            Font = Enum.Font.Garamond
             Text = Text;
             TextWrapped = DoesWrap or false,
             RichText = true,
@@ -1016,7 +1017,7 @@ do
         });
 
         if DoesWrap then
-            local Y = select(2, Library:GetTextBounds(Text, Enum.Font.Code, 14, Vector2.new(TextLabel.AbsoluteSize.X, math.huge)))
+            local Y = select(2, Library:GetTextBounds(Text, Enum.Font.Garamond, 14, Vector2.new(TextLabel.AbsoluteSize.X, math.huge)))
             TextLabel.Size = UDim2.new(1, -4, 0, Y)
         else
 
@@ -1036,7 +1037,7 @@ do
             TextLabel.Text = Text
 
             if DoesWrap then
-                local Y = select(2, Library:GetTextBounds(Text, Enum.Font.Code, 14, Vector2.new(TextLabel.AbsoluteSize.X, math.huge)))
+                local Y = select(2, Library:GetTextBounds(Text, Enum.Font.Garamond, 14, Vector2.new(TextLabel.AbsoluteSize.X, math.huge)))
                 TextLabel.Size = UDim2.new(1, -4, 0, Y)
             end
 
@@ -1095,6 +1096,7 @@ do
 
         local ButtonLabel = Library:CreateLabel({
             Size = UDim2.new(1, 0, 1, 0);
+            Font = Enum.Font.Garamond
             TextSize = 14;
             Text = Text;
             ZIndex = 6;
