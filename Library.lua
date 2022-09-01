@@ -139,14 +139,13 @@ function Library:AddToolTip(InfoStr, HoverInstance)
     })
 
     local Label = Library:CreateLabel({
-        Position = UDim2.fromOffset(3, 1),
+        Position = UDim2.fromOffset(3, 4),
         Size = UDim2.fromOffset(X, Y);
         TextSize = 12;
         Text = InfoStr,
         TextColor3 = Library.FontColor,
         TextXAlignment = Enum.TextXAlignment.Left;
         ZIndex = 12;
-
         Parent = Tooltip;
     });
 
