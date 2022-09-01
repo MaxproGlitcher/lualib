@@ -126,7 +126,7 @@ local ThemeManager = {} do
 			end
 		end)
 
-        groupbox:AddLabel('Themes are located at:\nworkspace/GlobalHackV2/themes', true)
+        	groupbox:AddLabel('Themes are located at:\nworkspace/GlobalHackV2/themes', true)
 
 		ThemeManager:LoadDefault()
 
