@@ -2262,6 +2262,7 @@ function Library:Notify(Text, Time)
     local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.Code, 14);
 
     YSize = YSize + 4
+    XSize = XSize - 20
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
