@@ -2260,13 +2260,13 @@ end;
 
 function Library:Notify(Text, Time)
     local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.Code, 14);
-
-    YSize = YSize + 7
+    print("Notify")
+    YSize = YSize - 14
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
-        Position = UDim2.new(0, 20, 0, 10);
-        Size = UDim2.new(0, 0, 0, (YSize-8));
+        Position = UDim2.new(0, -25, 0, 10);
+        Size = UDim2.new(0, 0, 0, YSize);
         ClipsDescendants = true;
         ZIndex = 100;
         Parent = Library.NotificationArea;
