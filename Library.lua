@@ -1449,10 +1449,10 @@ do
             Parent = ToggleOuter;
         });
 
-        Library:OnHighlight(ToggleRegion, ToggleOuter,
-            { BorderColor3 = 'AccentColor' },
-            { BorderColor3 = 'Black' }
-        );
+       -- Library:OnHighlight(ToggleRegion, ToggleOuter,
+       --     { BorderColor3 = 'AccentColor' },
+       --     { BorderColor3 = 'Black' }
+       --);
 
         function Toggle:UpdateColors()
             Toggle:Display();
