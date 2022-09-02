@@ -1273,7 +1273,7 @@ do
             BackgroundTransparency = 1;
             ClipsDescendants = true;
 
-            Position = UDim2.new(0, 5, 0, 0);
+            Position = UDim2.new(0, 2, 0, 0);
             Size = UDim2.new(1, -5, 1, 0);
 
             ZIndex = 7;
@@ -1770,7 +1770,7 @@ do
             BackgroundTransparency = 1;
             Position = UDim2.new(1, -11, 0.5, 0);
             Size = UDim2.new(0, 8, 0, 8);
-            Image = 'http://www.roblox.com/asset/?id=6282522798';
+            Image = 'http://www.roblox.com/asset/?id=10792541203';
             ZIndex = 7;
             Parent = DropdownInner;
         });
