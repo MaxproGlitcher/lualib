@@ -1768,10 +1768,9 @@ do
         local DropdownArrow = Library:Create('ImageLabel', {
             AnchorPoint = Vector2.new(0, 0.5);
             BackgroundTransparency = 1;
-            Position = UDim2.new(1, 20, 0.5, 0);
+            Position = UDim2.new(1, 6, 0.5, 0);
             Size = UDim2.new(0, 8, 0, 8);
             Image = 'http://www.roblox.com/asset/?id=6282522798';
-            --ImageColor3 = Color3.fromRGB(166,166,166);
             ZIndex = 7;
             Parent = DropdownInner;
         });
