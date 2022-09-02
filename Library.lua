@@ -1054,7 +1054,7 @@ do
 
         local ButtonOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(1, -4, 0, 30);
+            Size = UDim2.new(1, -4, 0, 26);
             ZIndex = 5;
             Parent = Container;
         });
@@ -1089,7 +1089,7 @@ do
         local ButtonLabel = Library:CreateLabel({
             Size = UDim2.new(1, 0, 1, 0);
             Font = Enum.Font.SourceSansBold;
-            TextSize = 12;
+            TextSize = 12.5;
             Text = Text;
             ZIndex = 6;
             Parent = ButtonInner;
