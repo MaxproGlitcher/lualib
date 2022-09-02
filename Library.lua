@@ -1010,7 +1010,7 @@ do
 
         if DoesWrap then
             local Y = select(2, Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14, Vector2.new(TextLabel.AbsoluteSize.X, math.huge)))
-            TextLabel.Size = UDim2.new(1, -4, 0, Y)
+            TextLabel.Size = UDim2.new(0, 0, 0, Y)
         else
 
             Library:Create('UIListLayout', {
@@ -1449,11 +1449,6 @@ do
             Parent = ToggleOuter;
         });
 
-       -- Library:OnHighlight(ToggleRegion, ToggleOuter,
-       --     { BorderColor3 = 'AccentColor' },
-       --     { BorderColor3 = 'Black' }
-       --);
-
         function Toggle:UpdateColors()
             Toggle:Display();
         end;
@@ -1770,7 +1765,7 @@ do
             BackgroundTransparency = 1;
             Position = UDim2.new(1, -11, 0.5, 0);
             Size = UDim2.new(0, 8, 0, 8);
-            Image = 'http://www.roblox.com/asset/?id=6282522798';
+            Image = 'http://www.roblox.com/asset/?id=10792541203';
             ZIndex = 7;
             Parent = DropdownInner;
         });
