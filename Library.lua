@@ -2259,7 +2259,7 @@ function Library:SetWatermark(Text)
 end;
 
 function Library:Notify(Text, Time)
-    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
+    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.Code, 14);
 
     YSize = YSize + 4
 
@@ -2316,6 +2316,7 @@ function Library:Notify(Text, Time)
     local NotifyLabel = Library:CreateLabel({
         Position = UDim2.new(0, 4, 0, 0);
         Size = UDim2.new(1, -4, 1, 0);
+        Font = Enum.Font.Code
         Text = Text;
         TextXAlignment = Enum.TextXAlignment.Left;
         TextSize = 14;
@@ -2336,7 +2337,7 @@ function Library:Notify(Text, Time)
         BackgroundColor3 = 'AccentColor';
     }, true);
 
-    pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize, 0, YSize), 'Out', 'Quad', 0.4, true);
+    pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize+7, 0, YSize), 'Out', 'Quad', 0.4, true);
 
     task.spawn(function()
         wait(Time or 5);
