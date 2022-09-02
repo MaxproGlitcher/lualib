@@ -2265,8 +2265,8 @@ function Library:Notify(Text, Time)
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
-        Position = UDim2.new(0, 100, 0, 10);
-        Size = UDim2.new(0, 0, 0, YSize);
+        Position = UDim2.new(0, 20, 0, 10);
+        Size = UDim2.new(0, 0, 0, (YSize-8));
         ClipsDescendants = true;
         ZIndex = 100;
         Parent = Library.NotificationArea;
