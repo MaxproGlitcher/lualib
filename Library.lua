@@ -1287,7 +1287,7 @@ do
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansBold;
-            PlaceholderColor3 = Color3.fromRGB(190, 190, 190);
+            PlaceholderColor3 = Color3.fromRGB(138, 138, 138);
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
@@ -1770,7 +1770,7 @@ do
             BackgroundTransparency = 1;
             Position = UDim2.new(1, -11, 0.5, 0);
             Size = UDim2.new(0, 8, 0, 8);
-            Image = 'http://www.roblox.com/asset/?id=10792541203';
+            Image = 'http://www.roblox.com/asset/?id=6282522798';
             ZIndex = 7;
             Parent = DropdownInner;
         });
@@ -2605,7 +2605,7 @@ function Library:CreateWindow(...)
             local Highlight = Library:Create('Frame', {
                 BackgroundColor3 = Library.AccentColor;
                 BorderSizePixel = 0;
-                Size = UDim2.new(1, 0, 0, 2);
+                Size = UDim2.new(1, 0, 0, 3);
                 ZIndex = 5;
                 Parent = BoxInner;
             });
