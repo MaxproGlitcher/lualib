@@ -1283,12 +1283,12 @@ do
         local Box = Library:Create('TextBox', {
             BackgroundTransparency = 1;
 
-            Position = UDim2.fromOffset(-3, 0),
+            Position = UDim2.fromOffset(-8, 0),
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansSemibold;
-            --PlaceholderColor3 = Library:GetDarkerColor(ColorPicker.Value);
-            PlaceholderColor3 = Color3.fromRGB(157, 157, 157);
+            PlaceholderColor3 = Library:GetDarkerColor(ColorPicker.Value);
+            --PlaceholderColor3 = Color3.fromRGB(157, 157, 157);
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
