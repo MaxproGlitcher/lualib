@@ -1287,12 +1287,12 @@ do
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansLight;
-            PlaceholderColor3 = Color3.fromRGB(110, 110, 110);
+            PlaceholderColor3 = Color3.fromRGB(135, 135, 135);
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
             TextColor3 = Library.FontColor;
-            TextSize = 13;
+            TextSize = 14;
             TextStrokeTransparency = 0;
             TextXAlignment = Enum.TextXAlignment.Left;
 
@@ -2255,7 +2255,7 @@ function Library:Notify(Text, Time)
     local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
 
     YSize = YSize + 4
-    XSize = XSize + 1
+    XSize = XSize + 3
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
