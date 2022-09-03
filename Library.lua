@@ -5,16 +5,16 @@ local CoreGui = game:GetService('CoreGui');
 local RunService = game:GetService('RunService')
 local RenderStepped = RunService.RenderStepped;
 local Mouse = game:GetService('Players').LocalPlayer:GetMouse();
-local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
-local ScreenGui = Instance.new('ScreenGui');
-ProtectGui(ScreenGui);
 
+local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end)
+local ScreenGui = Instance.new('ScreenGui');
+
+ProtectGui(ScreenGui);
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
 
 local Toggles = {};
 local Options = {};
-
 getgenv().Toggles = Toggles;
 getgenv().Options = Options;
 
