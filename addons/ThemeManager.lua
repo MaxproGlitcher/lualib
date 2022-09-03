@@ -41,6 +41,7 @@ local ThemeManager = {} do
 		end
 
 		self.Library.AccentColorDark = self.Library:GetDarkerColor(self.Library.AccentColor);
+		self.Library.AccentColorDesaturated = self.Library:GetDesaturatedColor(self.Library.AccentColor, 2.8)
 		self.Library:UpdateColorsUsingRegistry()
 	end
 
@@ -125,8 +126,6 @@ local ThemeManager = {} do
 				self.Library:Notify(string.format('Set default theme to %q', Options.ThemeManager_CustomThemeList.Value))
 			end
 		end)
-
-        	groupbox:AddLabel('Themes are located at:\nworkspace/GlobalHackV2/themes', true)
 
 		ThemeManager:LoadDefault()
 
