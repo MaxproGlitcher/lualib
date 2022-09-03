@@ -2246,21 +2246,21 @@ end;
 
 function Library:SetWatermark(Text)
     local X, Y = Library:GetTextBounds(Text, Enum.Font.ArialBold, 14);
-    Library.Watermark.Size = UDim2.new(0, X + 15, 0, Y + 6);
+    Library.Watermark.Size = UDim2.new(0, X + 2, 0, Y + 6);
     Library.WatermarkText.Text = Text;
     Library:SetWatermarkVisibility(true)
 end;
 
 function Library:Notify(Text, Time)
-    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
+    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansLight, 14);
 
     YSize = YSize + 4
-    XSize = XSize + 3
+    XSize = XSize + 5
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, -25, 0, 10);
-        Size = UDim2.new(0, 0, 0, YSize);
+        Size = UDim2.new(0, XSize, 0, YSize);
         ClipsDescendants = true;
         ZIndex = 100;
         Parent = Library.NotificationArea;
@@ -2310,7 +2310,7 @@ function Library:Notify(Text, Time)
     local NotifyLabel = Library:CreateLabel({
         Position = UDim2.new(0, 4, 0, 0);
         Size = UDim2.new(1, -4, 1, 0);
-        Font = Enum.Font.SourceSansSemibold;
+        Font = Enum.Font.SourceSansLight;
         Text = Text;
         TextXAlignment = Enum.TextXAlignment.Left;
         TextSize = 14;
