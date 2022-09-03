@@ -1293,7 +1293,7 @@ do
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansSemibold;
-            PlaceholderColor3 = Library.AccentColorDesaturated
+            PlaceholderColor3 = Library.AccentColorDesaturated;
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
