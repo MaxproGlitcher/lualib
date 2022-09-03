@@ -222,12 +222,6 @@ function Library:GetDarkerColor(Color)
 end; 
 Library.AccentColorDark = Library:GetDarkerColor(Library.AccentColor);
 
-function Library:GetDesaturatedColor(Color, SatFactor)
-    local H, S, V = Color3.toHSV(Color);
-    return Color3.fromHSV(H, S/SatFactor, V);
-end;
-Library.AccentColorDesaturated = Library:GetDesaturatedColor(Library.AccentColor, 2.8);
-
 function Library:AddToRegistry(Instance, Properties, IsHud)
     local Idx = #Library.Registry + 1;
     local Data = {
@@ -1293,7 +1287,7 @@ do
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansSemibold;
-            PlaceholderColor3 = Library.AccentColorDesaturated;
+            PlaceholderColor3 = Color3.fromRGB(138,138,138);
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
