@@ -224,7 +224,7 @@ Library.AccentColorDark = Library:GetDarkerColor(Library.AccentColor);
 
 function Library:GetDesaturatedColor(Color, SatFactor)
     local H, S, V = Color3.toHSV(Color);
-    return Color3.fromHSV(H + SatFactor, S + SatFactor, V + SatFactor);
+    return Color3.fromHSV(H, S, V + SatFactor);
 end; 
 Library.AccentColorDesaturated = Library:GetDesaturatedColor(Library.AccentColor, 47);
 
