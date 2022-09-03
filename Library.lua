@@ -23,7 +23,6 @@ local Library = {
     RegistryMap = {};
     HudRegistry = {};
     FontColor = Color3.fromRGB(255, 255, 255);
-    LowFontColor = Color3.fromRGB(156, 156, 156);
     MainColor = Color3.fromRGB(28, 28, 28);
     BackgroundColor = Color3.fromRGB(20, 20, 20);
     AccentColor = Color3.fromRGB(0, 85, 255);
@@ -1393,7 +1392,6 @@ do
         local Toggle = {
             Value = Info.Default or false;
             Type = 'Toggle';
-
             Addons = {},
         };
 
@@ -1449,11 +1447,6 @@ do
             ZIndex = 8;
             Parent = ToggleOuter;
         });
-
-        Library:OnHighlight(ToggleRegion, ToggleOuter,
-            { BorderColor3 = 'LowFontColor' },
-            { BorderColor3 = 'Black' }
-        );
 
         function Toggle:UpdateColors()
             Toggle:Display();
