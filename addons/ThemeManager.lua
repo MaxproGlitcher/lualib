@@ -41,7 +41,6 @@ local ThemeManager = {} do
 		end
 
 		self.Library.AccentColorDark = self.Library:GetDarkerColor(self.Library.AccentColor);
-		self.Library.AccentColorDesaturated = self.Library:GetDesaturatedColor(self.Library.AccentColor, 2.8)
 		self.Library:UpdateColorsUsingRegistry()
 	end
 
