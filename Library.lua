@@ -222,6 +222,12 @@ function Library:GetDarkerColor(Color)
 end; 
 Library.AccentColorDark = Library:GetDarkerColor(Library.AccentColor);
 
+function Library:GetDesaturatedColor(Color, SatFactor)
+    local H, S, V = Color3.toHSV(Color);
+    return Color3.fromHSV(H, S, V + SatFactor);
+end; 
+Library.AccentColorDesaturated = Library:GetDesaturatedColor(Library.AccentColor, 47);
+
 function Library:AddToRegistry(Instance, Properties, IsHud)
     local Idx = #Library.Registry + 1;
     local Data = {
@@ -1283,12 +1289,11 @@ do
         local Box = Library:Create('TextBox', {
             BackgroundTransparency = 1;
 
-            Position = UDim2.fromOffset(-16, 0),
+            Position = UDim2.new(0, -4, 0, 0);
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansSemibold;
-            PlaceholderColor3 = Library:GetDarkerColor(Library.AccentColor);
-            --PlaceholderColor3 = Color3.fromRGB(157, 157, 157);
+            PlaceholderColor3 = Library:GetDarkerColor(Library.AccentColorDesaturated);
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
