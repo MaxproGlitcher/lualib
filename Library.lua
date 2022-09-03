@@ -23,6 +23,7 @@ local Library = {
     RegistryMap = {};
     HudRegistry = {};
     FontColor = Color3.fromRGB(255, 255, 255);
+    LowFontColor = Color3.fromRGB(156, 156, 156)
     MainColor = Color3.fromRGB(28, 28, 28);
     BackgroundColor = Color3.fromRGB(20, 20, 20);
     AccentColor = Color3.fromRGB(0, 85, 255);
@@ -1426,7 +1427,7 @@ do
 
         local ToggleLabel = Library:CreateLabel({
             Size = UDim2.new(0, 216, 1, 0);
-            Position = UDim2.new(1, 6, 1, 5);
+            Position = UDim2.new(1, 6, 0, 0);
             TextSize = 13;
             Text = Info.Text;
             TextXAlignment = Enum.TextXAlignment.Left;
@@ -1448,6 +1449,11 @@ do
             ZIndex = 8;
             Parent = ToggleOuter;
         });
+
+        Library:OnHighlight(ToggleRegion, ToggleOuter,
+            { BorderColor3 = 'LowFontColor' },
+            { BorderColor3 = 'Black' }
+        );
 
         function Toggle:UpdateColors()
             Toggle:Display();
