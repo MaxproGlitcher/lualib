@@ -882,7 +882,7 @@ do
                 task.spawn(function()
                     while (not Break) do
                         if Text == '...' then
-                            Text = '';
+                            Text = '.';
                         end;
 
                         Text = Text .. '.';
@@ -1220,8 +1220,8 @@ do
         local Container = Groupbox.Container;
 
         local InputLabel = Library:CreateLabel({
-            Size = UDim2.new(1, 0, 0, 10);
-            TextSize = 12;
+            Size = UDim2.new(0, 0, 0, 14);
+            TextSize = 13;
             Text = Info.Text;
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 5;
@@ -1292,7 +1292,7 @@ do
 
             Text = Info.Default or '';
             TextColor3 = Library.FontColor;
-            TextSize = 12;
+            TextSize = 14;
             TextStrokeTransparency = 0;
             TextXAlignment = Enum.TextXAlignment.Left;
 
