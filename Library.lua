@@ -681,7 +681,7 @@ do
 
         local PickOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(0, 28, 0, 15);
+            Size = UDim2.new(0, 56, 0, 15);
             ZIndex = 6;
             Parent = ToggleLabel;
         });
@@ -1401,7 +1401,7 @@ do
 
         local ToggleOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(0, 8, 0, 8);
+            Size = UDim2.new(0, 12, 0, 8);
             ZIndex = 5;
             Parent = Container;
         });
