@@ -1286,8 +1286,9 @@ do
             Position = UDim2.fromOffset(0, 0),
             Size = UDim2.fromScale(5, 1),
             
-            Font = Enum.Font.SourceSansLight;
-            PlaceholderColor3 = Color3.fromRGB(135, 135, 135);
+            Font = Enum.Font.SourceSansSemibold;
+            --PlaceholderColor3 = Library:GetDarkerColor(ColorPicker.Value);
+            PlaceholderColor3 = Color3.fromRGB(157, 157, 157);
             PlaceholderText = Info.Placeholder or '';
 
             Text = Info.Default or '';
@@ -2252,10 +2253,9 @@ function Library:SetWatermark(Text)
 end;
 
 function Library:Notify(Text, Time)
-    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansLight, 14);
+    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
 
     YSize = YSize + 4
-    XSize = XSize + 5
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
@@ -2310,7 +2310,7 @@ function Library:Notify(Text, Time)
     local NotifyLabel = Library:CreateLabel({
         Position = UDim2.new(0, 4, 0, 0);
         Size = UDim2.new(1, -4, 1, 0);
-        Font = Enum.Font.SourceSansLight;
+        Font = Enum.Font.SourceSansSemibold;
         Text = Text;
         TextXAlignment = Enum.TextXAlignment.Left;
         TextSize = 14;
