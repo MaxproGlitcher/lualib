@@ -1283,7 +1283,7 @@ do
         local Box = Library:Create('TextBox', {
             BackgroundTransparency = 1;
 
-            Position = UDim2.fromOffset(0, 0),
+            Position = UDim2.fromOffset(-3, 0),
             Size = UDim2.fromScale(5, 1),
             
             Font = Enum.Font.SourceSansSemibold;
