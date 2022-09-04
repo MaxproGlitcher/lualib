@@ -2566,7 +2566,7 @@ function Library:CreateWindow(...)
             TabFrame.Visible = false;
         end;
 
-        function Tab:AddGroupbox(Info)
+        function Tab:AddGroupbox(Info, isCenter)
             local Groupbox = {};
 
             local BoxOuter = Library:Create('Frame', {
@@ -2644,8 +2644,12 @@ function Library:CreateWindow(...)
                         Size = Size + Element.Size.Y.Offset;
                     end;
                 end;
-
-                BoxOuter.Size = UDim2.new(1, 0, 0, 20 + Size + 2);
+                
+                if isCenter ~= true then
+                    BoxOuter.Size = UDim2.new(1, 0, 0, 22 + Size);
+                else
+                    BoxOuter.Size = UDim2.new(1, 0, 0, 22 + (Size*2));
+                end
             end;
 
             Groupbox.Container = Container;
