@@ -119,7 +119,16 @@ end;
 
 function Library:AddToolTip(InfoStr, HoverInstance)
     local X, Y = Library:GetTextBounds(InfoStr, Enum.Font.SourceSansSemibold, 14);
-    X=X-4
+    local txtLength = InfoStr:len()
+
+    if txtLength > 200 then
+        X=X-7
+    elseif txtLength > 120 then
+        X=X-4
+    elseif txtLength > 70 then
+        X=X-1
+    end
+
     local Tooltip = Library:Create('Frame', {
         BackgroundColor3 = Library.BackgroundColor,        
         BorderColor3 = Library.AccentColor,
@@ -130,6 +139,8 @@ function Library:AddToolTip(InfoStr, HoverInstance)
 
         Visible = false,
     })
+
+
 
     local Label = Library:CreateLabel({
         Position = UDim2.fromOffset(2, 1),
