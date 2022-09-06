@@ -2259,7 +2259,7 @@ function Library:Notify(Text, Time)
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
-        Position = UDim2.new(0, -25, 0, 10);
+        Position = UDim2.new(0, 100, 0, 10);
         Size = UDim2.new(0, XSize, 0, YSize);
         ClipsDescendants = true;
         ZIndex = 100;
