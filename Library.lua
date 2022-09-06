@@ -123,7 +123,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
         BackgroundColor3 = Library.BackgroundColor,        
         BorderColor3 = Library.AccentColor,
 
-        Size = UDim2.fromOffset(X + 2, Y + 3),
+        Size = UDim2.fromOffset(X, Y),
         ZIndex = 11;
         Parent = Library.ScreenGui,
 
@@ -681,7 +681,7 @@ do
 
         local PickOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(0, 56, 0, 15);
+            Size = UDim2.new(0, 63, 0, 15);
             ZIndex = 6;
             Parent = ToggleLabel;
         });
