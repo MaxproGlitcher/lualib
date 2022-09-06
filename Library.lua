@@ -118,16 +118,7 @@ function Library:MakeDraggable(Instance, Cutoff)
 end;
 
 function Library:AddToolTip(InfoStr, HoverInstance)
-    local X, Y = Library:GetTextBounds(InfoStr, Enum.Font.SourceSansSemibold, 14);
-    local txtLength = InfoStr:len()
-
-    if txtLength > 200 then
-        X=X-7
-    elseif txtLength > 120 then
-        X=X-4
-    elseif txtLength > 70 then
-        X=X-1
-    end
+    local X, Y = Library:ForceTextBounds(InfoStr, Enum.Font.SourceSansSemibold, 14);
 
     local Tooltip = Library:Create('Frame', {
         BackgroundColor3 = Library.BackgroundColor,        
@@ -2263,7 +2254,7 @@ end;
 
 function Library:SetWatermark(Text)
     local X, Y = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
-    Library.Watermark.Size = UDim2.new(0, X + 2, 0, Y + 9);
+    Library.Watermark.Size = UDim2.new(0, X + 10, 0, Y + 10);
     Library.WatermarkText.Text = Text;
     Library:SetWatermarkVisibility(true)
 end;
