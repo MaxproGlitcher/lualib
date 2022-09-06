@@ -221,7 +221,7 @@ end;
 
 function Library:ForceTextBounds(Text, Font, Size, Resolution)
     local Bounds = TextService:GetTextSize(Text, Size, Font, Resolution or Vector2.new(1920, 1080))
-    return Bounds.X*1.1, Bounds.Y*1.1
+    return Bounds.X*1.02, Bounds.Y*1.02
 end;
 
 function Library:GetDarkerColor(Color)
@@ -2254,7 +2254,7 @@ end;
 
 function Library:SetWatermark(Text)
     local X, Y = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
-    Library.Watermark.Size = UDim2.new(0, X + 10, 0, Y + 10);
+    Library.Watermark.Size = UDim2.new(0, X + 12, 0, Y + 10);
     Library.WatermarkText.Text = Text;
     Library:SetWatermarkVisibility(true)
 end;
