@@ -137,7 +137,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
         TextSize = 13;
         Text = InfoStr,
         TextColor3 = Library.FontColor,
-        TextXAlignment = Enum.TextXAlignment.Left;
+        TextXAlignment = Enum.TextXAlignment.Center;
         ZIndex = 12;
         Parent = Tooltip;
     });
