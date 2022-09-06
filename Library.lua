@@ -228,6 +228,11 @@ function Library:GetTextBounds(Text, Font, Size, Resolution)
     return Bounds.X, Bounds.Y
 end;
 
+function Library:ForceTextBounds(Text, Font, Size, Resolution)
+    local Bounds = TextService:GetTextSize(Text, Size, Font, Resolution or Vector2.new(1920, 1080))
+    return Bounds.X*1.1, Bounds.Y*1.1
+end;
+
 function Library:GetDarkerColor(Color)
     local H, S, V = Color3.toHSV(Color);
     return Color3.fromHSV(H, S, V / 1.5);
@@ -2121,7 +2126,7 @@ do
     local WatermarkOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, 103, 0, -26);
-        Size = UDim2.new(0, 213, 0, 20);
+        Size = UDim2.new(0, 190, 0, 20);
         ZIndex = 200;
         Visible = false;
         Parent = ScreenGui;
@@ -2257,8 +2262,8 @@ function Library:SetWatermarkVisibility(Bool)
 end;
 
 function Library:SetWatermark(Text)
-    local X, Y = Library:GetTextBounds(Text, Enum.Font.ArialBold, 14);
-    Library.Watermark.Size = UDim2.new(0, X + 2, 0, Y + 6);
+    local X, Y = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
+    Library.Watermark.Size = UDim2.new(0, X + 2, 0, Y + 9);
     Library.WatermarkText.Text = Text;
     Library:SetWatermarkVisibility(true)
 end;
