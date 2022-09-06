@@ -118,7 +118,7 @@ function Library:MakeDraggable(Instance, Cutoff)
 end;
 
 function Library:AddToolTip(InfoStr, HoverInstance)
-    local X, Y = Library:ForceTextBounds(InfoStr, Enum.Font.SourceSansSemibold, 14);
+    local X, Y = Library:GetTextBounds(InfoStr, Enum.Font.SourceSansSemibold, 14);
 
     local Tooltip = Library:Create('Frame', {
         BackgroundColor3 = Library.BackgroundColor,        
@@ -130,8 +130,6 @@ function Library:AddToolTip(InfoStr, HoverInstance)
 
         Visible = false,
     })
-
-
 
     local Label = Library:CreateLabel({
         Position = UDim2.fromOffset(2, 1),
@@ -217,11 +215,6 @@ end;
 function Library:GetTextBounds(Text, Font, Size, Resolution)
     local Bounds = TextService:GetTextSize(Text, Size, Font, Resolution or Vector2.new(1920, 1080))
     return Bounds.X, Bounds.Y
-end;
-
-function Library:ForceTextBounds(Text, Font, Size, Resolution)
-    local Bounds = TextService:GetTextSize(Text, Size, Font, Resolution or Vector2.new(1920, 1080))
-    return Bounds.X*1.02, Bounds.Y*1.02
 end;
 
 function Library:GetDarkerColor(Color)
