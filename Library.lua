@@ -1055,7 +1055,7 @@ do
 
         local ButtonOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(1, -4, 0, 16);
+            Size = UDim2.new(1, -4, 0, 19.5);
             ZIndex = 5;
             Parent = Container;
         });
@@ -1509,7 +1509,7 @@ do
     end;
 
     function Funcs:AddSlider(Idx, Info)
-        assert(Info.Default and Info.Text and Info.Min and Info.Max and Info.Rounding, 'Bad Slider Data');
+        assert(Info.Default and Info.Text and Info.Min and Info.Max and Info.Rounding and Info.Suffix, 'Bad Slider Data');
 
         local Slider = {
             Value = Info.Default;
@@ -1612,7 +1612,7 @@ do
 
         function Slider:Display()
             local Suffix = Info.Suffix or '';
-            DisplayLabel.Text = string.format('%s / %s', Slider.Value .. Suffix, Slider.Max .. Suffix);
+            DisplayLabel.Text = string.format(Slider.Value .. Suffix);
 
             local X = math.ceil(Library:MapValue(Slider.Value, Slider.Min, Slider.Max, 0, Slider.MaxSize));
             Fill.Size = UDim2.new(0, X, 1, 0);
@@ -2253,10 +2253,10 @@ function Library:SetWatermark(Text)
 end;
 
 function Library:Notify(Text, Time)
-    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.Ubuntu, 14);
+    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
 
     YSize = YSize + 4
-    XSize = XSize + 2
+    XSize = XSize + 1
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
@@ -2311,7 +2311,7 @@ function Library:Notify(Text, Time)
     local NotifyLabel = Library:CreateLabel({
         Position = UDim2.new(0, 4, 0, 0);
         Size = UDim2.new(1, -4, 1, 0);
-        Font = Enum.Font.Ubuntu;
+        Font = Enum.Font.SourceSansSemibold;
         Text = Text;
         TextXAlignment = Enum.TextXAlignment.Left;
         TextSize = 14;
