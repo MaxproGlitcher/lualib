@@ -2253,9 +2253,10 @@ function Library:SetWatermark(Text)
 end;
 
 function Library:Notify(Text, Time)
-    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
+    local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.Ubuntu, 14);
 
     YSize = YSize + 4
+    XSize = XSize + 2
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
@@ -2310,7 +2311,7 @@ function Library:Notify(Text, Time)
     local NotifyLabel = Library:CreateLabel({
         Position = UDim2.new(0, 4, 0, 0);
         Size = UDim2.new(1, -4, 1, 0);
-        Font = Enum.Font.SourceSansSemibold;
+        Font = Enum.Font.Ubuntu;
         Text = Text;
         TextXAlignment = Enum.TextXAlignment.Left;
         TextSize = 14;
