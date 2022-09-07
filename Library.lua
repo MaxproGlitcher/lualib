@@ -2230,11 +2230,11 @@ function Library:Notify(Text, Time)
     local XSize, YSize = Library:GetTextBounds(Text, Enum.Font.SourceSansSemibold, 14);
 
     YSize = YSize + 4
-    XSize = XSize + 1
+    XSize = XSize + 2
 
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
-        Position = UDim2.new(0, 100, 0, 10);
+        Position = UDim2.new(0, 100, 0, -2);
         Size = UDim2.new(0, XSize, 0, YSize);
         ClipsDescendants = true;
         ZIndex = 100;
@@ -2306,7 +2306,7 @@ function Library:Notify(Text, Time)
         BackgroundColor3 = 'AccentColor';
     }, true);
 
-    pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize+7, 0, YSize), 'Out', 'Quad', 0.4, true);
+    pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize+7, 0, YSize), 'Out', 'Quad', 0.2, true);
 
     task.spawn(function()
         wait(Time or 5);
