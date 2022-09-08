@@ -76,7 +76,7 @@ local ThemeManager = {} do
 		groupbox:AddLabel('Main color'):AddColorPicker('MainColor', { Default = self.Library.MainColor });
 		groupbox:AddLabel('Accent color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
 		groupbox:AddLabel('Highlights color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
-		groupbox:AddLabel('Text color'):AddColorPicker('FontColor', { Default = self.Library.FontColor });
+		groupbox:AddLabel('Font color'):AddColorPicker('FontColor', { Default = self.Library.FontColor });
 
 		local ThemesArray = {}
 		for Name, Theme in next, self.BuiltInThemes do
