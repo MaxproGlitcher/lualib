@@ -865,12 +865,12 @@ do
                 DisplayLabel.Text = '';
 
                 local Break;
-                local Text = '';
+                local Text = '.';
 
                 task.spawn(function()
                     while (not Break) do
                         if Text == '...' then
-                            Text = '.';
+                            Text = '';
                         end;
 
                         Text = Text .. '.';
